@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+
+<br lang= 'en' xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name=“viewport” content=“width=device-width, initial-scale=1.0”>
+    <title>Final1</title>
+
+    <style>
+        .payment-card-selection {
+          background-color: #fff;
+          display: flex;
+          max-width: 480px;
+          width: 100%;
+          flex-direction: column;
+          overflow: hidden;
+          font-family: 'Noto Sans KR', sans-serif;
+          font-weight: 700;
+          text-transform: capitalize;
+          margin: 0 auto;
+        }
+        
+        .header-image {
+          aspect-ratio: 8.7;
+          object-fit: contain;
+          object-position: center;
+          width: 100%;
+        }
+        
+        .content-wrapper {
+          display: flex;
+          margin-top: 9px;
+          width: 100%;
+          flex-direction: column;
+          align-items: start;
+          padding: 0 20px;
+        }
+        
+        .icon {
+          aspect-ratio: 1;
+          object-fit: contain;
+          object-position: center;
+          width: 24px;
+        }
+        
+        .main-title {
+          color: #000;
+          font-size: 20px;
+          margin: 17px 0 0 11px;
+        }
+        
+        .subtitle {
+          color: #949494;
+          font-size: 12px;
+          margin: 50px 0 0 30px;
+        }
+        
+        .card-list {
+          display: flex;
+          margin-top: 13px;
+          width: 100%;
+          flex-direction: column;
+          font-size: 12px;
+          justify-content: start;
+        }
+        
+        .card-item {
+          display: flex;
+          width: 100%;
+          flex-direction: column;
+        }
+        
+        .card-content {
+          display: flex;
+          width: 100%;
+          flex-direction: column;
+          justify-content: start;
+          align-self: center;
+        }
+        
+        .card-wrapper {
+          display: flex;
+          width: 100%;
+          flex-direction: column;
+        }
+        
+        .card-inner {
+          background-color: #ebf0ff;
+          display: flex;
+          min-height: 69px;
+          width: 100%;
+          flex-direction: column;
+          justify-content: center;
+          align-items: flex-start;
+        }
+        
+        .card-details {
+          display: flex;
+          width: 100%;
+          max-width: 312px;
+          flex-direction: column;
+        }
+        
+        .card-info {
+          display: flex;
+          width: 130%;
+          align-items: center;
+          justify-content: space-between;
+          align-items: flex-start;
+        }
+        
+        .card-logo-text {
+          align-self: stretch;
+          display: flex;
+          align-items: center;
+          gap: 14px;
+          justify-content: center;
+          /* margin: auto 0; */
+          margin-left:50px;
+        }
+        
+        .card-logo {
+          aspect-ratio: 0.7;
+          object-fit: contain;
+          object-position: center;
+          width: 33px;
+          align-self: stretch;
+          margin: auto 0;
+        }
+        
+        .card-text {
+          border-radius: 0;
+          align-self: center;
+          display: flex;
+          flex-direction: column;
+          width: 120px;
+          margin: 0px;
+        }
+        
+        .card-name {
+          color: #000;
+          align-self: start;
+          margin: 0px;
+        }
+        
+        .card-number {
+          color: #949494;
+          margin: 5px;
+        }
+        
+        .recommendation-badge {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          align-self: stretch;
+          border-radius: 10px;
+          background-color: #366dff;
+          min-height: 21px;
+          color: #8dd742;
+          font-size: 15px;
+          width: 43px;
+          margin: auto 0;
+          padding: 2px 10px;
+        }
+        
+        .sheet {
+          border-radius: 30px 30px 0px 0px;
+          background-color: #fff;
+          box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.25);
+          align-self: center;
+          display: flex;
+          margin-top: 12px;
+          flex-direction: column;
+          font-size: 16px;
+          padding: 8px 25px 42px;
+          width: 90%;
+        }
+        
+        @media (max-width: 640px) {
+
+        }
+        
+        .sheet-handle {
+          border-radius: 3px;
+          background-color: #949494;
+          align-self: center;
+          display: flex;
+          width: 50px;
+          height: 3px;
+        }
+        
+        .sheet-content {
+          display: flex;
+          margin-top: 32px;
+          width: 100%;
+          flex-direction: column;
+          justify-content: center;
+        }
+        
+        .selected-card {
+
+          display: flex;
+          width: 215px;
+          max-width: 100%;
+          gap: 17px;
+          align-self:flex-start;
+          margin-left: 63px;
+        }
+        
+        .selected-card-logo {
+          aspect-ratio: 0.71;
+          object-fit: contain;
+          object-position: center;
+          width: 36px;
+        }
+        
+        .selected-card-info {
+          align-self: start;
+          display: flex;
+          flex-direction: column;
+          margin: 0px;
+        }
+        
+        .card-details-section {
+          display: flex;
+          margin-top: 52px;
+          width: 100%;
+          flex-direction: column;
+          font-size: 12px;
+          justify-content: start;
+          align-items: center;
+        }
+        
+        .target-current-performance {
+          display: flex;
+          max-width: 100%;
+          width: 307px;
+          flex-direction: column;
+        }
+        
+        .performance-wrapper {
+          display: flex;
+          width: 100%;
+          flex-direction: column;
+          justify-content: start;
+        }
+        
+        .target-performance {
+          border-radius: 0;
+          display: flex;
+          width: 100%;
+          gap: 20px;
+          justify-content: space-between;
+
+        }
+        
+        .performance-label {
+          color: #000;
+          font-size: 14px;
+        }
+        
+        .performance-value {
+          color: #366dff;
+          font-size: 14px;
+        }
+        
+        .current-performance {
+          border-radius: 0;
+          display: flex;
+          margin-top: 7px;
+          width: 100%;
+          gap: 20px;
+          justify-content: space-between;
+        }
+        
+        .amount-input-group {
+          border-radius: 0;
+          display: flex;
+          margin-top: 17px;
+          width: 307px;
+          padding-top: 12px;
+          flex-direction: column;
+          font-size: 20px;
+          color: #949494;
+          white-space: nowrap;
+          padding-bottom: 12px;
+          border-bottom:  1px solid #949494;
+        }
+        
+        .amount-input-label {
+          align-self: start;
+        }
+        
+        .info-text {
+          color: #949494;
+          margin-top: 17px;
+          width: 307px;
+        }
+        
+        .next-button {
+          border-radius: 10px;
+          background-color: #366dff;
+          margin-top: 52px;
+          min-height: 48px;
+          max-width: 100%;
+          width: 311px;
+          color: #fff;
+          padding: 13px 137px;
+          border: 1px solid #366dff;
+          align-self: center;
+
+        }
+        
+        .visually-hidden {
+          position: absolute;
+          width: 1px;
+          height: 1px;
+          padding: 0;
+          margin: -1px;
+          overflow: hidden;
+          clip: rect(0, 0, 0, 0);
+          white-space: nowrap;
+          border: 0;
+        }
+        </style>
+        
+
+
+</head>
+<body>
+
+    
+</body>
+
+<section class="payment-card-selection">
+    <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/59e14c652d4001cd6f05e02c8dcbdceb55666bc530da23bee3c40f24f73df7f6?placeholderIfAbsent=true&apiKey=163f7c8e0ec14f1487600b619eb1e488" alt="" class="header-image" />
+    <div class="content-wrapper">
+      <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/1780c9cf76d56ea827a0888ec009acd28e625b9718fa361c9b47e6d50b786e3a?placeholderIfAbsent=true&apiKey=163f7c8e0ec14f1487600b619eb1e488" alt="" class="icon" />
+      <h1 class="main-title">결제할 카드를 설정해주세요<br />여러 장의 카드로 분할결제도 가능해요</h1>
+      <h2 class="subtitle">나의 결제 수단</h2>
+    </div>
+    <div class="card-list">
+      <article class="card-item">
+        <div class="card-content">
+          <div class="card-wrapper">
+            <div class="card-inner">
+              <div class="card-details">
+                <div class="card-info">
+                  <div class="card-logo-text">
+                    <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/13d5486830eaa54226b16e137c6994c7423a8ee99b899efe649652952bb5fd56?placeholderIfAbsent=true&apiKey=163f7c8e0ec14f1487600b619eb1e488" alt="국민 행복 카드 로고" class="card-logo" />
+                    <div class="card-text">
+                      <p class="card-name">국민 행복 카드</p>
+                      <p class="card-number">KB 국민카드 5633</p>
+                    </div>
+                  </div>
+                  <div class="recommendation-badge" aria-label="추천 카드">추 천</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+      <article class="card-item">
+        <div class="card-content">
+          <div class="card-wrapper">
+            <div class="card-inner" style="background-color: #fff;">
+              <div class="card-details">
+                <div class="card-info">
+                  <div class="card-logo-text">
+                    <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/9cf4a878b2cd62832d130c99f14d2a1fc7d429794f6baf32b96d4ec93b5026b9?placeholderIfAbsent=true&apiKey=163f7c8e0ec14f1487600b619eb1e488" alt="신한카드 로고" class="card-logo" />
+                    <div class="card-text">
+                      <p class="card-name">내 카드</p>
+                      <p class="card-number">신한카드 4820</p>
+                    </div>
+                  </div>
+                  <div class="recommendation-badge" style="background-color: #fff; color: #fff;" aria-label="추천 안됨">추 천</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+    </div>
+    <div class="sheet">
+      <div class="sheet-handle" role="presentation"></div>
+      <div class="sheet-content">
+        <div class="selected-card">
+          <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/4dabea85e9403a520a87f7b37e276c82d3f7ac441d4bfeae3322598bd745fc75?placeholderIfAbsent=true&apiKey=163f7c8e0ec14f1487600b619eb1e488" alt="국민 행복 카드 로고" class="selected-card-logo" />
+          <div class="selected-card-info">
+            <p class="card-name">국민 행복 카드</p>
+            <p class="card-number">KB 국민카드 **** 5633</p>
+          </div>
+        </div>
+        <div class="card-details-section">
+          <div class="target-current-performance">
+            <div class="performance-wrapper">
+              <div class="target-performance">
+                <p class="performance-label">목표 실적</p>
+                <p class="performance-value">30만원</p>
+              </div>
+              <div class="current-performance">
+                <p class="performance-label">현재 실적</p>
+                <p class="performance-value">15만원</p>
+              </div>
+            </div>
+          </div>
+          <div class="amount-input-group">
+            <label for="amount-input" class="amount-input-label">금액입력(원)</label>
+            <input type="text" id="amount-input" class="visually-hidden" aria-label="금액 입력" />
+            <div class="amount-input-line" aria-hidden="true"></div>
+          </div>
+          <p class="info-text">체크 카드는 할부 적용이 불가능합니다</p>
+        </div>
+        <button class="next-button">다 음</button>
+      </div>
+    </div>
+  </section>
+</body>
+
+</html>
